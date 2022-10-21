@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AzureFunctionsVersion>v4</AzureFunctionsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.1.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Azure.Identity" Version="1.6.1" />
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="5.2.9" />
+    <PackageReference Include="Azure.Monitor.Query" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.13.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Microsoft.IdentityModel.Clients.ActiveDirectory" />
+    <None Remove="Azure.Identity" />
+    <None Remove="Microsoft.WindowsAzure.Management.Monitoring" />
+    <None Remove="Azure.Monitor.Query" />
+    <None Remove="AzureFunctions.Extensions.DependencyInjection" />
+    <None Remove="Microsoft.Extensions.DependencyInjection" />
+    <None Remove="Microsoft.Azure.Functions.Extensions" />
+    <None Remove="Microsoft.Extensions.Http" />
+    <None Remove="Services\" />
+    <None Remove="Services\Metrics\" />
+    <None Remove="Commons\" />
+    <None Remove="Commons\Logging\" />
+    <None Remove="Config\" />
+    <None Remove="Config\PostgresConfig\" />
+    <None Remove="Commons\Exceptions\" />
+    <None Remove="Azure.Storage.Blobs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Services\Metrics\" />
+    <Folder Include="Commons\" />
+    <Folder Include="Commons\Logging\" />
+    <Folder Include="Config\" />
+    <Folder Include="Config\Postgres\" />
+    <Folder Include="Commons\Exceptions\" />
+  </ItemGroup>
+</Project>

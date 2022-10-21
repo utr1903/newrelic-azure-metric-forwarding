@@ -1,0 +1,27 @@
+{
+  "subscriptions": [
+    {
+      "id": "e1db9504-a667-4b67-bf49-22abe8f772c7",
+      "resourceGroups": [
+        {
+          "name": "rg-newrelic-test-1",
+          "postgresDatabaseNames": [
+            {
+              "name": "postgres-newrelic-test-1",
+              "metrics": [
+                cpu, ipops
+              ]
+            }
+            
+          ]
+        },
+        {
+          "name": "rg-newrelic-test-2",
+          "postgresDatabaseNames": [
+            "postgres-newrelic-test-2"
+          ]
+        }
+      ]
+    }
+  ]
+}
